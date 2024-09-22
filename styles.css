@@ -1,0 +1,139 @@
+/* 重置浏览器默认样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* 容器样式 */
+.container {
+    display: flex;
+    height: 100%;
+}
+
+/* 左侧面板样式 */
+.left-panel {
+    flex: 6;
+    background-image: url('xx.jpg'); /* 替换为你的图片URL */
+    background-size: cover;
+    background-position: center;
+}
+
+/* 右侧面板样式 */
+.right-panel {
+    flex: 4;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 欢迎文本样式 */
+.welcome-text {
+    font-family: '楷体', serif;
+    font-size: small;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 登录容器样式 */
+.login-container {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* 登录标题样式 */
+.login-header {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 输入框样式 */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    color: black;
+    border-radius: 5px;
+    transition: border-color 0.3s ease; /* 添加过渡动画 */
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: blue; /* 输入框聚焦时的边框颜色 */
+    outline: none; /* 去除聚焦时的轮廓线 */
+}
+
+/* 登录按钮样式 */
+.login-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* 添加背景色和透明度的过渡动画 */
+}
+
+.login-button:hover {
+    background-color: darkblue; /* 鼠标悬停时改变按钮的背景色 */
+    opacity: 0.8; /* 鼠标悬停时降低按钮透明度 */
+}
+
+/* 为登录容器添加额外的样式 */
+.login-container {
+    position: relative; /* 设置相对定位，以便可以相对于它定位子元素 */
+    overflow: hidden; /* 隐藏超出容器的内容 */
+}
+
+/* 登录提示信息样式（假设有一个用于显示提示信息的元素） */
+.login-tip {
+    position: absolute; /* 绝对定位，相对于最近的已定位父元素（这里是.login-container） */
+    bottom: -20px; /* 初始位置在容器底部下方 */
+    left: 0;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: rgba(255, 0, 0, 0.8); /* 红色半透明背景 */
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: bottom 0.3s ease; /* 底部位置的过渡动画 */
+    visibility: hidden; /* 初始不可见 */
+    opacity: 0; /* 初始透明度为0 */
+}
+
+/* 当登录容器有“has-tip”类时，显示提示信息 */
+.login-container.has-tip .login-tip {
+    bottom: 0; /* 移动到容器底部 */
+    visibility: visible; /* 可见 */
+    opacity: 1; /* 透明度为1 */
+}
+
+/* 响应式设计：当屏幕宽度小于600px时，调整样式 */
+@media (max-width: 600px) {
+    /* ...（此处省略之前的响应式设计代码）... */
+
+    /* 可以添加更多针对小屏幕的样式调整 */
+    .login-button {
+        font-size: 14px; /* 减小按钮字体大小 */
+        padding: 8px 16px; /* 减小按钮内边距 */
+    }
+}
